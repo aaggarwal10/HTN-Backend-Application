@@ -1,10 +1,10 @@
 const { Hacker, HackerSkill } = require('../models')
 const { makeSkill, addSkill } = require('../databases/create-skills')
 
-async function deleteSkills (hackerEmail) {
+async function deleteSkills (hackerEmail) { // Delete ALL Skills from Hacker
   HackerSkill.destroy({ where: { HackerEmail: [hackerEmail] } })
 }
-async function addSkills (hacker, skillList) {
+async function addSkills (hacker, skillList) { // add all skills in skillList to hacker
   for (const s in skillList) {
     const skill = skillList[s]
     const hSkill = await makeSkill(skill.name, skill.rating)
@@ -12,7 +12,7 @@ async function addSkills (hacker, skillList) {
   }
   return hacker
 }
-async function updateUser (hackerEmail, newData) {
+async function updateUser (hackerEmail, newData) { // Updater User with newData given.
   if ('skills' in newData) {
     deleteSkills(hackerEmail)
   }

@@ -1,9 +1,9 @@
 const { Skill, HackerSkill } = require('../models')
 
-async function getAllSkills () {
+async function getAllSkills () { // All Skills from Skill Table
   return await Skill.findAll({ raw: true, attributes: ['id', 'name'] })
 }
-async function getSkills (minFreq, maxFreq) {
+async function getSkills (minFreq, maxFreq) { // Filter out skills that have frequencies outside specified bounds/
   const allSkills = await getAllSkills()
   const skillsInRange = []
   for (const s in allSkills) {
