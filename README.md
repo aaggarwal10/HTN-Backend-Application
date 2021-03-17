@@ -13,7 +13,6 @@ $ npm install
 $ npm run build
 $ npm run start
 ```
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 Now you should be able to to run requests to localhost:4000. Simply follow the instructions in the documentation.
 
 ## Part 2 - Build Setup and Run Project
